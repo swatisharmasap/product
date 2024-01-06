@@ -1,0 +1,48 @@
+
+<mvc:View controllerName="sap.com.product.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+<Label text="ProductID" required="true"/>
+<Input id="ProductID" placeholder="please enter product id" liveChange="onLiveChangeProductID"/>
+
+<Label text="ProductName" required="true"/>
+<Input id="ProductName" placeholder="please enter product name" liveChange="onLiveChangeproductname"/>
+
+<Label text="SupplierID" required="true"/>
+<Input id="SupplierID" placeholder="please enter supplier id" liveChange="onLiveChangeSupplier"/>
+
+<Label text="CategoryID" required="true"/>
+<Input id="CategoryID" placeholder="please enter category id" liveChange="onLiveChangeCategory"/>
+
+<Label text="QuantityPerUnit" required="true"/>
+<Input id="QuantityPerUnit" placeholder="please enter quantity per unit" liveChange="onLiveChangequantity"/>
+
+<Label text="UnitPrice" required="true"/>
+<Input id="UnitPrice" placeholder="please enter unitprice" liveChange="onLiveChangeUnitprice"/>
+
+<Label text="UnitsInStock" required="true"/>
+<Input id="UnitsInStock" placeholder="please enter unitsinstock" liveChange="onLiveChangeUnitinstock"/>
+
+<Label text="UnitsOnOrder" required="true"/>
+<Input id="UnitsOnOrder"  placeholder="please enter unitsonorder" liveChange="onLiveChangeUnitsonorder"/>
+
+<Label text="ReorderLevel" required="true"/>
+<Input id="ReorderLevel" placeholder="please enter reorderlevel" liveChange="onLiveChangereorderlevel"/>
+
+<Label text="Discontinued" required="true"/>
+<Input id="Discontinued" placeholder="please enter true/false" liveChange="onLiveChangeDiscontinued"/>
+
+        </content>
+        <footer  >
+        <OverflowToolbar>
+        <ToolbarSpacer/>
+        <Button text="Save" press="onSave"   type="Accept" />
+<Button text="Clear" press="onClear" type="Reject" />
+
+</OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

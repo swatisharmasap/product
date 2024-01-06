@@ -1,0 +1,98 @@
+<mvc:View controllerName="sap.com.product.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+		xmlns:fb="sap.ui.comp.filterbar">
+    <Page id="page" title="{i18n>title}">
+        <content>
+		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="ProductID" label="ProductID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="ProductID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="ProductName" label="ProductName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="ProductName"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="SupplierID" label="SupplierID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+									<Input id="SupplierID"/>	
+									</fb:control>
+								</fb:FilterGroupItem>
+		
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+  
+<Table  items="{oProductJSONModel>/ProductDetails}" id="ProductTable">
+		<columns>
+			<Column>
+				<Text text="Product ID" />
+			</Column>
+			<Column>
+				<Text text="Product Name" />
+			</Column>
+			<Column>
+				<Text text="SupplierID" />
+			</Column>
+
+			<Column>
+				<Text text="CategoryID" />
+			</Column>
+
+            <Column>
+				<Text text="QuantityPerUnit" />
+			</Column>
+
+             <Column>
+				<Text text="UnitPrice" />
+			</Column>
+             <Column>
+				<Text text="UnitsInStock" />
+			</Column>
+             <Column>
+				<Text text="UnitsOnOrder" />
+			</Column>
+             <Column>
+				<Text text="ReorderLevel" />
+			</Column>
+            <Column>
+				<Text text="Discontinued" />
+			</Column>
+
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onRowPress">
+				<cells>
+					<Text text="{oProductJSONModel>ProductID}"  />
+					<Text text="{oProductJSONModel>ProductName}" />
+					<Text text="{oProductJSONModel>SupplierID}" />
+					<Text text="{oProductJSONModel>CategoryID}" />
+                    <Text text="{oProductJSONModel>QuantityPerUnit}" />
+                    <!-- <Text text="{oProductJSONModel>UnitPrice}" /> -->
+					<ObjectStatus text="{oProductJSONModel>UnitPrice}" state="{path:'oProductJSONModel>UnitPrice', formatter:'.UnitPriceLogic'}"/>
+			
+                    <Text text="{oProductJSONModel>UnitsInStock}" />
+                    <Text text="{oProductJSONModel>UnitsOnOrder}" />
+                    <Text text="{oProductJSONModel>ReorderLevel}" />
+                    <Text text="{oProductJSONModel>Discontinued}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+</Table>
+
+
+
+
+
+
+
+
+
+
+
+
+        </content>
+    </Page>
+</mvc:View>
